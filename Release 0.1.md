@@ -20,6 +20,10 @@
 * Toggling of map layers in the data set displayed on the map.
 * Map pan and zoom.
 
+
+## Documents and project status
+* [Task board](https://github.com/orgs/openskope/projects/6)  for Release 0.1.
+
 ---
 
 ## Future features NOT included in this release
