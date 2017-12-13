@@ -1,10 +1,10 @@
-# Test Release 0.1 - Plan - Draft 13-Dec-2017
+# Test Release 0.1 - Draft Plan -13-Dec-2017
 
 ## Objectives
 
 * Deliver a first release of the SKOPE application to a test environment.
 * Demonstrate data discovery via the search page, and exploration of selected data in the workspace.
-* Confirm that a release comprising multiple services running in different Docker containers can be depooyed easily to a computing environment supporting Docker.
+* Confirm that a release comprising multiple services running in different Docker containers can be deployed easily to a computing environment supporting Docker.
 
 ## Subsystems we will include in this release
 
