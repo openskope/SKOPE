@@ -1,4 +1,4 @@
-# Test Release 0.1 - Draft Plan -13-Dec-2017
+# Test Release 0.1 - Draft Plan - 13-Dec-2017
 
 ## Overview
 ### Objectives
@@ -6,6 +6,7 @@
 * Deliver a first release of the SKOPE application to a test environment.
 * Demonstrate data discovery via the search page, and exploration of selected data in the workspace.
 * Confirm that a release comprising multiple services running in different Docker containers can be deployed easily to a computing environment supporting Docker.
+* Seed a pipeline of releases from development to test to production.
 
 ### Subsystems we will include in this release
 
@@ -26,7 +27,7 @@
 * Timeseries graphs of conditions at selected point on map.
 
 ### Documents and project status
-* [Task board](https://github.com/orgs/openskope/projects/6)  for Release 0.1.
+* [Task board](https://github.com/orgs/openskope/projects/6) for Release 0.1.
 
 ---
 ## Deliverables
@@ -35,31 +36,37 @@ We will deliver the following artifacts as part of the release. These artifacts 
 
 ### Docker images
 
-* **Docker image for running the Meteor application.**  The running container will serve the web pages rendered in the user's web browser.
+* **Docker image for running the Meteor application.**  The running container will serve the web pages rendered in the user's web browser.   [[skope-deployment#17](https://github.com/openskope/skope-deployment/issues/17)]
 
-* **Docker image for running the Elasticsearch service.**  The running container will store and make searchable information about each of the data sets accessible in the web application. The metadata will include the the information required by the web application to request map tiles from the GeoServer service.
+* **Docker image for running the Elasticsearch service.**  The running container will store and make searchable information about each of the data sets accessible in the web application. The metadata will include the information required by the web application to request map tiles from the GeoServer service.  [[skope-deployment#14](https://github.com/openskope/skope-deployment/issues/14)]
 
-* **Docker image for running the GeoServer service.**  The running container will provide a service that dynamically generates map layer tiles for display on the Workspace page of the web application.
+* **Docker image for running the GeoServer service.**  The running container will provide a service that dynamically generates map layer tiles for display on the Workspace page of the web application.  [[skope-deployment#12](https://github.com/openskope/skope-deployment/issues/12)]
 
-* **Docker image for running the Nginx reverse-proxy service.**  The running container will host the sole Internet-facing network port. The user's web browser will load the application from this port and will send and receive requests to the Elasticsearch and GeoServer services through this port.  Nginx will transparently route these requests to the appropriate backend services and route responses back to the web browser clients.
+* **Docker image for running the Nginx reverse-proxy service.**  The running container will host the sole Internet-facing network port. The user's web browser will load the Meteor application from this port and will send and receive requests to the Elasticsearch and GeoServer services through this port.  Nginx will transparently route these requests to the appropriate backend services and route responses back to the web browser clients.   [[skope-deployment#16](https://github.com/openskope/skope-deployment/issues/16)]
 
 ### Deployment scripts
 
-* **Docker Compose File** for starting the docker containers comprising the running application, establishing the network connections between them, and mounting host storage volumes required by each service.
+* **Docker Compose File** for starting the docker containers comprising the running application, establishing the network connections between them, and mounting host storage volumes accessed directly by each service.   [[skope-deployment#18](https://github.com/openskope/skope-deployment/issues/18)]
 
-* **Elasticsearch index initialization script** for loading the documents describing the data sets accessible to the web application into a new instance of Elasticsearch.
+* **Elasticsearch index initialization script** for loading the documents describing the data sets accessible to the web application into a new instance of Elasticsearch.   [[skope-deployment#15](https://github.com/openskope/skope-deployment/issues/15)]
 
 ### Raster data sets
 The following data sets will be stored as GeoTIFF files and used by GeoServer to render map tiles displayed in the web application.  Each data set will have an associated JSON document describing the data set and representing the information stored and searchable via the Elasticsearch service.
 
-* Outputs of the **PaleoCAR** run previously accessible through the SKOPE I prototype, at the same resolution and temporal and spatial extents.
+* Outputs of the **PaleoCAR** run previously accessible through the SKOPE I prototype, at the same resolution and temporal and spatial extents. [[skope-deployment#19](https://github.com/openskope/skope-deployment/issues/19)]
 
-* A version of the **PRISM** data sets than can be freely distributed without a licensing agreement (resolution and spatial extent TBD).
+* A version of the **PRISM** data sets than can be freely distributed without a licensing agreement (resolution and spatial extent TBD).  [[skope-deployment#20](https://github.com/openskope/skope-deployment/issues/20)]
 
 * The **National Elevation Dataset** (resolution and spatial extent TBD).
 
+### Computational Resources
+
+* **Test VM for running the SKOPE application.**  This OpenStack instance running on Nebula will host each test release in succession.  Its configuration will be identical to a future 'Production VM' instance on Nebula that will host the current production instance of the SKOPE application.  [[skope-deployment#11](https://github.com/openskope/skope-deployment/issues/11)]
+
+* **Disk volume for storing data files accesible to the Test VM.**  This volume will be mounted via NFS on the Test VM. Data will be deployed to this volume for each test release.  [[skope-deployment#13](https://github.com/openskope/skope-deployment/issues/13)]
+
 ---
-## Out of scope for this release
+## Limitations
 
 ### Future features we will *not* include in this release
 
