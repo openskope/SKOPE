@@ -67,11 +67,11 @@ The following data sets will be stored as GeoTIFF files and used by GeoServer to
 
 ### Documentation
 
-* **List of properties for filtering data sets listed in search results.** Each property will have a description of the valid values for the property, e.g. numerical range, set of allowed values, unstructured text.
+* **List of properties for filtering data sets listed in search results.** Each property will have a description of the valid values for the property, e.g. numerical range, set of allowed values, unstructured text.  [[SKOPE#14](https://github.com/openskope/SKOPE/issues/14)]
 
-* **Schema for JSON documents describing raster data sets available through the web application.**  These documents will be indexed by Elasticsearch and the properties in these documents searchable through the web application.
+* **Schema for JSON documents describing raster data sets available through the web application.**  These documents will be indexed by Elasticsearch and the properties in these documents searchable through the web application.  [[skope-deployment#22](https://github.com/openskope/skope-deployment/issues/22)]
 
-* **Procedure for setting up a new OpenStack VM configured to serve as either a Test or Production VM.**  This will allow developers to set up their own development VMs identically to the Test and Production VMs.  The procedure will include configuring user accounts, mounting NFS volumes, installing and configuring Docker and its dependencies, and maintaining system security.
+* **Procedure for setting up a new OpenStack VM configured to serve as either a Test or Production VM.**  This will allow developers to set up their own development VMs identically to the Test and Production VMs.  The procedure will include configuring user accounts, mounting NFS volumes, installing and configuring Docker and its dependencies, and maintaining system security.  [[skope-deployment#21](https://github.com/openskope/skope-deployment/issues/21)]
 
 ---
 ## Limitations
