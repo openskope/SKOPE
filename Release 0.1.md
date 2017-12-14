@@ -3,10 +3,10 @@
 ## Overview
 ### Objectives
 
-* Deliver a first release of the SKOPE application to a test environment.
-* Demonstrate data discovery via the search page, and exploration of selected data in the workspace.
+* Deliver a **first release** of the SKOPE application **to a test environment**.
+* Demonstrate data discovery via the **search page**, and exploration of selected data on the **workspace page**.
 * Confirm that a release comprising multiple services running in different Docker containers can be deployed easily to a computing environment supporting Docker.
-* Seed a pipeline of releases from development to test to production.
+* Seed a pipeline of releases from development, to test, to production.
 
 ### Subsystems we will include in this release
 
@@ -59,11 +59,19 @@ The following data sets will be stored as GeoTIFF files and used by GeoServer to
 
 * The **National Elevation Dataset** (resolution and spatial extent TBD).
 
-### Computational Resources
+### Computing Resources
 
 * **Test VM for running the SKOPE application.**  This OpenStack instance running on Nebula will host each test release in succession.  Its configuration will be identical to a future 'Production VM' instance on Nebula that will host the current production instance of the SKOPE application.  [[skope-deployment#11](https://github.com/openskope/skope-deployment/issues/11)]
 
 * **Disk volume for storing data files accesible to the Test VM.**  This volume will be mounted via NFS on the Test VM. Data will be deployed to this volume for each test release.  [[skope-deployment#13](https://github.com/openskope/skope-deployment/issues/13)]
+
+### Documentation
+
+* **List of properties for filtering data sets listed in search results.** Each property will have a description of the valid values for the property, e.g. numerical range, set of allowed values, unstructured text.
+
+* **Schema for JSON documents describing raster data sets available through the web application.**  These documents will be indexed by Elasticsearch and the properties in these documents searchable through the web application.
+
+* **Procedure for setting up a new OpenStack VM configured to serve as either a Test or Production VM.**  This will allow developers to set up their own development VMs identically to the Test and Production VMs.  The procedure will include configuring user accounts, mounting NFS volumes, installing and configuring Docker and its dependencies, and maintaining system security.
 
 ---
 ## Limitations
