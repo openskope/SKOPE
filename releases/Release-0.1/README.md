@@ -57,8 +57,6 @@ The following data sets will be stored as GeoTIFF files and used by GeoServer to
 
 * A version of the **PRISM** data sets than can be freely distributed without a licensing agreement (resolution and spatial extent TBD).  [[skope-deployment#20](https://github.com/openskope/skope-deployment/issues/20)]
 
-* The **National Elevation Dataset** (resolution and spatial extent TBD).
-
 ### Computing Resources
 
 * **Test VM for running the SKOPE application.**  This OpenStack instance running on Nebula will host each test release in succession.  Its configuration will be identical to a future 'Production VM' instance on Nebula that will host the current production instance of the SKOPE application.  [[skope-deployment#11](https://github.com/openskope/skope-deployment/issues/11)]
