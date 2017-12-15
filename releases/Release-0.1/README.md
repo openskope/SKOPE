@@ -1,4 +1,4 @@
-# Test Release 0.1 - Draft Plan - 13-Dec-2017
+# Test Release 0.1 - Draft Plan
 
 ## Overview
 ### Objectives
